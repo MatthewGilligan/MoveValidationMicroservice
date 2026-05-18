@@ -239,4 +239,27 @@ sequenceDiagram
 
 ---
 
+# Example of call
+
+## File reference
+
+| File | Purpose |
+|---|---|
+| `chess.proto` | Source of truth for the communication contract |
+| `chess_pb2.py` | Auto-generated message classes (do not edit) |
+| `chess_pb2_grpc.py` | Auto-generated service stubs (do not edit) |
+| `server.py` | The microservice — run this first |
+| `test_client.py` | Standalone test program with 10 test cases |
+
+## Running the test suite
+
+```bash
+# Terminal 1
+python3 server.py
+
+# Terminal 2
+python3 test_client.py
+```
+
+All 10 tests should report `PASS` and the final line should read `Results: 10 passed / 0 failed / 10 total`.
 
