@@ -240,8 +240,3 @@ sequenceDiagram
 ---
 
 
-# Terminal 2
-python3 test_client.py
-```
-
-All 10 tests should report `PASS` and the final line should read `Results: 10 passed / 0 failed / 10 total`.
