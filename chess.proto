@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package chess;
+
+// The move validation service
+service MoveValidator {
+  rpc ValidateMove (ValidateMoveRequest) returns (ValidateMoveResponse);
+}
+
+// Request: sent by the game server or test client
+message ValidateMoveRequest {
+  string game_id        = 1;
+  string player_id      = 2;
+  string piece_position = 3;  // e.g. "E2"
+  string target_position = 4; // e.g. "E4"
+  string move_type      = 5;  // NORMAL, CASTLE, PROMOTION, EN_PASSANT
+  string board_state    = 6;  // JSON-encoded board layout
+}
+
+// Response: returned by the microservice
+message ValidateMoveResponse {
+  bool   is_valid         = 1;
+  string move_type        = 2;
+  bool   check_state      = 3;  // true if opponent is now in check
+  bool   checkmate        = 4;
+  string updated_board    = 5;  // JSON-encoded updated board
+  string error_message    = 6;  // populated when is_valid = false
+}
