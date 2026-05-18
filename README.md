@@ -82,14 +82,14 @@ response = stub.ValidateMove(request)
 
 ### Request parameters
 
-| Parameter | Type | Required | Description |
+| Parameter | Type | Description |
 |---|---|---|---|
-| `game_id` | string | ✅ | Unique identifier for the chess game session |
-| `player_id` | string | ✅ | Identifier for the player making the move |
-| `piece_position` | string | ✅ | Current square of the piece, e.g. `"E2"` |
-| `target_position` | string | ✅ | Destination square, e.g. `"E4"` |
-| `move_type` | string | ✅ | One of: `NORMAL`, `CASTLE`, `PROMOTION`, `EN_PASSANT` |
-| `board_state` | string | ✅ | JSON-encoded dict of the full board layout (see format below) |
+| `game_id` | string | Unique identifier for the chess game session |
+| `player_id` | string  | Identifier for the player making the move |
+| `piece_position` | string  | Current square of the piece, e.g. `"E2"` |
+| `target_position` | string  | Destination square, e.g. `"E4"` |
+| `move_type` | string  | One of: `NORMAL`, `CASTLE`, `PROMOTION`, `EN_PASSANT` |
+| `board_state` | string  | JSON-encoded dict of the full board layout (see format below) |
 
 ### Board state format
 
@@ -239,21 +239,6 @@ sequenceDiagram
 
 ---
 
-## File reference
-
-| File | Purpose |
-|---|---|
-| `chess.proto` | Source of truth for the communication contract |
-| `chess_pb2.py` | Auto-generated message classes (do not edit) |
-| `chess_pb2_grpc.py` | Auto-generated service stubs (do not edit) |
-| `server.py` | The microservice — run this first |
-| `test_client.py` | Standalone test program with 10 test cases |
-
-## Running the test suite
-
-```bash
-# Terminal 1
-python3 server.py
 
 # Terminal 2
 python3 test_client.py
