@@ -5,7 +5,7 @@ A microservice for CS361 where it validates the moves that you make for chess
 # Chess Move Validation Microservice
 **CS 361 – Microservice A**
 
-> ⚠️ **Communication contract — do not alter the request/response schema once teammates have integrated.**
+> **Communication contract — do not alter the request/response schema once teammates have integrated.**
 
 ---
 
