@@ -239,6 +239,9 @@ sequenceDiagram
 
 ---
 
+<img width="831" height="551" alt="image" src="https://github.com/user-attachments/assets/b0ea5d83-0e68-4838-9ed3-43f30898a81f" />
+
+
 # Example of call
 
 ## File reference
